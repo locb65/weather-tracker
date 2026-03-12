@@ -1,10 +1,10 @@
 <template>
   <div class="weather-card" v-if="weather">
     <h2>{{ weather.city }}</h2>
-    <p><strong class="status-header">Temperature</strong>{{ weather.temperature }}°F</p>
-    <p><strong class="status-header">Condition</strong>{{ weather.condition }}</p>
-    <p><strong class="status-header">Humidity</strong>{{ weather.humidity }}%</p>
-    <p><strong class="status-header">Wind</strong>{{ weather.wind }}mph</p>
+    <p><strong class="status-header">Temperature</strong> {{ weather.temperature }}°C or</p>
+    <p><strong class="status-header">Condition</strong> {{ weather.condition }}</p>
+    <p><strong class="status-header">Humidity</strong> {{ weather.humidity }}%</p>
+    <p><strong class="status-header">Wind</strong> {{ weather.wind }}mph</p>
   </div>
 </template>
 
@@ -26,8 +26,9 @@ defineProps({
   max-width: 450px;
 }
 
-.status-header {
-  margin: 8px 0;
+p {
+  margin: 8px;
+  padding-right: 8px;
 }
 
 h2 {
