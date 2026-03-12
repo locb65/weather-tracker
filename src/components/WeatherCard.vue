@@ -1,12 +1,21 @@
 <template>
-  <div class="weather-card">
-    <h2>Tokyo</h2>
-    <p><strong class="status-header">Temperature</strong>1°C</p>
-    <p><strong class="status-header">Condition</strong>Cloud but Windy</p>
-    <p><strong class="status-header">Humidity</strong>82%</p>
-    <p><strong class="status-header">Wind</strong>25mph</p>
+  <div class="weather-card" v-if="weather">
+    <h2>{{ weather.city }}</h2>
+    <p><strong class="status-header">Temperature</strong>{{ weather.temperature }}°F</p>
+    <p><strong class="status-header">Condition</strong>{{ weather.condition }}</p>
+    <p><strong class="status-header">Humidity</strong>{{ weather.humidity }}%</p>
+    <p><strong class="status-header">Wind</strong>{{ weather.wind }}mph</p>
   </div>
 </template>
+
+<script setup>
+defineProps({
+  weather: {
+    type: Object,
+    required: true,
+  },
+})
+</script>
 
 <style scoped>
 .weather-card {
