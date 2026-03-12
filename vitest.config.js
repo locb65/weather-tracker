@@ -5,12 +5,6 @@ import viteConfig from './vite.config'
 export default mergeConfig(
   viteConfig,
   defineConfig({
-    server: {
-      watch: {
-        usePolling: true,
-        interval: 100,
-      },
-    },
     test: {
       environment: 'jsdom',
       exclude: [...configDefaults.exclude, 'e2e/**'],
